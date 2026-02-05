@@ -1,0 +1,82 @@
+# AI Debug Helper
+
+> Free AI code debugger that catches hallucinations and bugs
+
+## Description
+
+AI Debug Helper is a real-time code analysis tool specifically designed to detect issues in AI-generated code. It identifies hallucinations (methods that don't exist), security vulnerabilities, runtime errors, and code quality issues across 7 programming languages.
+
+## Key Features
+
+- **AI Hallucination Detection**: Catches when AI invents methods that don't exist (e.g., Array.isEmpty() in JavaScript, DataFrame.isEmpty() in pandas)
+- **Multi-Language Support**: JavaScript, TypeScript, Python, Go, Rust, C++, Java
+- **80+ Detection Patterns**: Comprehensive pattern library for common AI mistakes
+- **Security Analysis**: Detects hardcoded secrets, SQL injection risks, eval() usage
+- **One-Click Fixes**: Automated code corrections for detected issues
+- **Educational Feedback**: Explains why each issue matters and how to fix it
+
+## Use Cases
+
+1. **Validating AI-Generated Code**: Check code from ChatGPT, GitHub Copilot, or other AI assistants
+2. **Learning Tool**: Understand common mistakes in AI-generated code
+3. **Security Audit**: Find security vulnerabilities before deployment
+4. **Code Review**: Automated first-pass review for AI-assisted development
+
+## Supported Languages & Patterns
+
+### JavaScript/TypeScript (16 patterns)
+- Hallucinated methods (isEmpty, contains, remove, clear)
+- Missing await on async operations
+- Promise error handling
+- Security issues (XSS, eval)
+
+### Python (12 patterns)
+- Mutable default arguments
+- Missing self parameter
+- Deprecated functions
+- pandas hallucinations
+
+### Go (7 patterns)
+- Ignored error returns
+- try/catch hallucination
+- Missing defer close
+
+### Rust (8 patterns)
+- Excessive unwrap()
+- Unsafe blocks
+- Lifetime annotations
+
+### C++ (11 patterns)
+- Memory leaks
+- Buffer overflows
+- Unsafe functions
+
+### Java (9 patterns)
+- String == comparison
+- Resource leaks
+- Generic exceptions
+
+## How It Works
+
+1. Paste your AI-generated code
+2. Select the programming language (or auto-detect)
+3. Click "Check Code"
+4. Review detected issues with severity labels (Critical/Warning/Info)
+5. Apply one-click fixes or manually correct
+
+## Technical Details
+
+- **Architecture**: React 19 + TypeScript, Vite build system
+- **Pattern Engine**: Regex-based with comment/string filtering
+- **Performance**: Supports up to 20 issues per analysis to avoid overwhelming users
+- **Real-time**: Instant analysis with no server required
+
+## Author
+
+Created by [akanthed](https://github.com/akanthed)
+
+## Links
+
+- **Live Demo**: https://ai-debug-helper.vercel.app/
+- **GitHub**: https://github.com/akanthed
+- **License**: MIT
